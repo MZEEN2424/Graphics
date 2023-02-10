@@ -214,7 +214,7 @@ local entityTable = Spawner.createEntity({
     },
     Cycles = {
         Min = 1,
-        Max = 10,
+        Max = math.random(2,3),
         WaitTime = 2,
     },
     CamShake = {
@@ -1493,20 +1493,20 @@ end)
 
 Section:NewButton("Spawn A120", "Spawn A120", function()
 
-local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
-
+-- Create entity
 local entityTable = Spawner.createEntity({
     CustomName = "A-120", -- Custom name of your entity
     Model = "https://github.com/tonyBflako/vynixusdoors/blob/main/A120edit.rbxm?raw=true", -- Can be GitHub file or rbxassetid
     Speed = 75, -- Percentage, 100 = default Rush speed
     DelayTime = 2, -- Time before starting cycles (seconds)
-    HeightOffset = 1.5,
+    HeightOffset = 0,
     CanKill = false,
-    KillRange = 10,
-    BackwardsMovement = true,
-    BreakLights = false,
+    KillRange = 50,
+    BackwardsMovement = false,
+    BreakLights = true,
     FlickerLights = {
-        false
+        true, -- Enabled/Disabled
+        1, -- Time (seconds)
     },
     Cycles = {
         Min = 1,
@@ -1514,153 +1514,161 @@ local entityTable = Spawner.createEntity({
         WaitTime = 2.5,
     },
     CamShake = {
-        false
-    },
-    Jumpscare = {
-        false, -- Enabled/Disabled
-    },
-   CustomDialog = {" "},
-})
-
-
-Spawner.runEntity(entityTable)
-end)
-
-Section:NewButton("Spawn A60", "Spawn A60", function()
-
-local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
-local entityTable = Spawner.createEntity({
-    CustomName = "A-60", -- Custom name of your entity
-    Model = "https://github.com/tonyBflako/vynixusdoors/blob/main/A60edit.rbxm?raw=true", -- Can be GitHub file or rbxassetid
-    Speed = 250, -- Percentage, 100 = default Rush speed
-    DelayTime = 2, -- Time before starting cycles (seconds)
-    HeightOffset = 2.5,
-    CanKill = falde,
-    KillRange = 50,
-    BackwardsMovement = false,
-    BreakLights = false,
-    FlickerLights = {
-        false, -- Enabled/Disabled
-        1, -- Time (seconds)
-    },
-    Cycles = {
-        Min = 1,
-        Max = 1,
-        WaitTime = 2,
-    },
-    CamShake = {
-        false, -- Enabled/Disabled
-    },
-    Jumpscare = {
-        false, -- Enabled/Disabled
-    },
-    firesignal(game.ReplicatedStorage.EntityInfo.DeathHint.OnClientEvent, {"Oh... Hello.", "I'm surprised you found this place...", "It's pretty tedious just to get here, last time I checked.", "Anyways, what'd you die to?", "Oh... the red one. I'm not too sure on what I would call it...", "Well, it usually attacks around room A-60, so...", "...you could just call it A-60. I dont know.", "Anyways, I hope you dont mind trying again, It would be helpful."}, "Yellow")
-})
-
-Spawner.runEntity(entityTable)
-end)
-
-Section:NewButton("Bald Fatality", "Spawn Fatality", function()
-local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
-
-
--- Create entity
-local entityTable = Spawner.createEntity({
-    CustomName = "the Putrid.", -- Custom name of your entity
-    Model = "https://github.com/tonyBflako/vynixusdoors/blob/main/fatality.rbxm?raw=true", -- Can be GitHub file or rbxassetid
-    Speed = 300, -- Percentage, 100 = default Rush speed
-    DelayTime = 5, -- Time before starting cycles (seconds)
-    HeightOffset = 0,
-    CanKill = true,
-    KillRange = 50,
-    BackwardsMovement = false,
-    BreakLights = true,
-    FlickerLights = {
         true, -- Enabled/Disabled
-        100000, -- Time (seconds)
-    },
-    Cycles = {
-        Min = 1,
-        Max = 1,
-        WaitTime = 2,
-    },
-    CamShake = {
-        true, -- Enabled/Disabled
-        {5555, 133124, 0, 1.5}, -- Shake values (don't change if you don't know)
-        60, -- Shake start distance (from Entity to you)
+        {3.5, 20, 0.1, 1}, -- Shake values (don't change if you don't know)
+        100, -- Shake start distance (from Entity to you)
     },
     Jumpscare = {
         true, -- Enabled/Disabled
         {
-            Image1 = "rbxassetid://0", -- Image1 url
-            Image2 = "rbxassetid://0", -- Image2 url
+            Image1 = "rbxassetid://10483855823", -- Image1 url
+            Image2 = "rbxassetid://10483999903", -- Image2 url
             Shake = true,
             Sound1 = {
-                7817626386, -- SoundId
-                { Volume = 5 }, -- Sound properties
+                10483790459, -- SoundId
+                { Volume = 0.5 }, -- Sound properties
             },
             Sound2 = {
-                0, -- SoundId
+                10483837590, -- SoundId
                 { Volume = 0.5 }, -- Sound properties
             },
             Flashing = {
-                false, -- Enabled/Disabled
+                true, -- Enabled/Disabled
                 Color3.fromRGB(255, 255, 255), -- Color
             },
             Tease = {
                 true, -- Enabled/Disabled
-                Min = 50,
-                Max = 50,
+                Min = 1,
+                Max = 3,
             },
         },
     },
     CustomDialog = {"You can", "put your", "custom death", "message here."}, -- Custom death message
 })
 
-Spawner.runEntity(entityTable)
-end)
 
-Section:NewButton("Spawn Madhatter", "Spawn Madhatter", function()
-
-local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
-
-local entityTable = Spawner.createEntity({
-    CustomName = "Template Entity", -- Custom name of your entity
-    Model = "https://github.com/tonyBflako/vynixusdoors/blob/main/Madhatter.rbxm?raw=true",
-    Speed = 50,
-    DelayTime = 10,
-    HeightOffset = 0,
-    CanKill = false,
-    KillRange = 50,
-    BackwardsMovement = true,
-    BreakLights = false,
-    FlickerLights = {
-        false, -- Enabled/Disabled
-    },
-    Cycles = {
-        Min = 1,
-        Max = 2,
-    },
-    CamShake = {
-        false, -- Enabled/Disabled
-    },
-    Jumpscare = {
-        false, -- Enabled/Disabled
-    },
-})
-
+-----[[  Debug -=- Advanced  ]]-----
 entityTable.Debug.OnEntitySpawned = function()
-    firesignal(game.ReplicatedStorage.EntityInfo.Caption.OnClientEvent, 'You feel like your being recorded.')
-    game:GetService("Workspace")["Ambience_Dark"]:Play()
+    print("Entity has spawned:", entityTable)
 end
 
-entityTable.Debug.OnLookAtEntity = function()
-    game.Players.LocalPlayer.Character.Humanoid:Hurt(0.3)
+entityTable.Debug.OnEntityDespawned = function()
+    print("Entity has despawned:", entityTable)
 end
 
 entityTable.Debug.OnEntityStartMoving = function()
-    game.Players.LocalPlayer.Character.WalkSpeed = 0
+    print("Entity has started moving:", entityTable)
 end
 
+entityTable.Debug.OnEntityFinishedRebound = function()
+    print("Entity has finished rebound:", entityTable)
+end
+
+entityTable.Debug.OnEntityEnteredRoom = function(room)
+    print("Entity:", entityTable, "has entered room:", room)
+end
+
+entityTable.Debug.OnLookAtEntity = function()
+    print("Player has looked at entity:", entityTable)
+end
+
+entityTable.Debug.OnDeath = function()
+    warn("Player has died.")
+end
+------------------------------------
+
+
+-- Run the created entity
+Spawner.runEntity(entityTable)
+end)
+
+Section:NewButton("Spawn A60", "Spawn A60", function()
+
+-- Create entity
+local entityTable = Spawner.createEntity({
+    CustomName = "A-60", -- Custom name of your entity
+    Model = "https://github.com/tonyBflako/vynixusdoors/blob/main/A60edit.rbxm?raw=true", -- Can be GitHub file or rbxassetid
+    Speed = 250, -- Percentage, 100 = default Rush speed
+    DelayTime = 2, -- Time before starting cycles (seconds)
+    HeightOffset = 0,
+    CanKill = false,
+    KillRange = 50,
+    BackwardsMovement = false,
+    BreakLights = true,
+    FlickerLights = {
+        true, -- Enabled/Disabled
+        1, -- Time (seconds)
+    },
+    Cycles = {
+        Min = 1,
+        Max = 4,
+        WaitTime = 2,
+    },
+    CamShake = {
+        true, -- Enabled/Disabled
+        {3.5, 20, 0.1, 1}, -- Shake values (don't change if you don't know)
+        100, -- Shake start distance (from Entity to you)
+    },
+    Jumpscare = {
+        true, -- Enabled/Disabled
+        {
+            Image1 = "rbxassetid://10483855823", -- Image1 url
+            Image2 = "rbxassetid://10483999903", -- Image2 url
+            Shake = true,
+            Sound1 = {
+                10483790459, -- SoundId
+                { Volume = 0.5 }, -- Sound properties
+            },
+            Sound2 = {
+                10483837590, -- SoundId
+                { Volume = 0.5 }, -- Sound properties
+            },
+            Flashing = {
+                true, -- Enabled/Disabled
+                Color3.fromRGB(255, 255, 255), -- Color
+            },
+            Tease = {
+                true, -- Enabled/Disabled
+                Min = 1,
+                Max = 3,
+            },
+        },
+    },
+    CustomDialog = {"You can", "put your", "custom death", "message here."}, -- Custom death message
+})
+
+
+-----[[  Debug -=- Advanced  ]]-----
+entityTable.Debug.OnEntitySpawned = function()
+    print("Entity has spawned:", entityTable)
+end
+
+entityTable.Debug.OnEntityDespawned = function()
+    print("Entity has despawned:", entityTable)
+end
+
+entityTable.Debug.OnEntityStartMoving = function()
+    print("Entity has started moving:", entityTable)
+end
+
+entityTable.Debug.OnEntityFinishedRebound = function()
+    print("Entity has finished rebound:", entityTable)
+end
+
+entityTable.Debug.OnEntityEnteredRoom = function(room)
+    print("Entity:", entityTable, "has entered room:", room)
+end
+
+entityTable.Debug.OnLookAtEntity = function()
+    print("Player has looked at entity:", entityTable)
+end
+
+entityTable.Debug.OnDeath = function()
+    warn("Player has died.")
+end
+------------------------------------
+
+
+-- Run the created entity
 Spawner.runEntity(entityTable)
 end)
